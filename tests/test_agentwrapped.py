@@ -26,7 +26,7 @@ def test_aggregation(wrapped):
     assert wrapped.tool_counts["Edit"] == 3
     assert wrapped.tool_counts["Bash"] == 2
     assert wrapped.tool_counts["Read"] == 1
-    assert wrapped.total_output_tokens == 4 * 50 + 2 * 20
+    assert wrapped.total_output_tokens == 4 * 12000 + 2 * 8000
 
 
 def test_personality_is_refactorer(wrapped):
