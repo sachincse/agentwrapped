@@ -1,0 +1,42 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "agentwrapped"
+version = "0.1.0"
+description = "Spotify Wrapped for your AI coding agent — one command turns a year of local Claude Code sessions into a shareable stat card."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "Sachin Singh" }]
+keywords = ["claude-code", "agent", "wrapped", "stats", "llm", "cli", "ai-agents"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+]
+dependencies = [
+    "trace-lens>=0.1.0",
+    "pillow>=9.0",
+    "rich>=13.0",
+    "typer>=0.9",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0"]
+
+[project.urls]
+Homepage = "https://github.com/sachincse/agentwrapped"
+Issues = "https://github.com/sachincse/agentwrapped/issues"
+
+[project.scripts]
+agentwrapped = "agentwrapped.cli:entrypoint"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/agentwrapped"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
